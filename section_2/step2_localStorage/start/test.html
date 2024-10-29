@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Todoリスト</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Todoリスト</h1>
+  <input type="text" id="todoInput" placeholder="Todoを入力">
+  <button id="addTodo">追加</button>
+  <ul id="todoList"></ul>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
