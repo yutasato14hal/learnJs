@@ -1,33 +1,19 @@
-const todoInput = document.getElementById('todoInput');
-const addBtn = document.getElementById('addTodo');
-const todoList = document.getElementById('todoList');
+const addBtn = document.getElementById('addTodo')
+const todoInput = document.getElementById('todoInput')
+const todoList = document.getElementById('todoList')
 
-// const savedTodos = JSON.stringify(newTodo)
-//   localStorage.setItem('todo', savedTodos);
-
-function addTodoList() {
+function addTodoToList(todoText) {
   const li = document.createElement('li');
-  li.innerHTML = newTodo;
-  todoList.appendChild(li);
-}  const Btn = document.createElement('button');
-function addDeleteBtn() {
+  li.textContent = todoText;
+  li.addEventListener('click', function () {
+    li.classList.toggle('completed'); // 完了状態のトグル
+  }); 
+  const dlBtn = document.createElement('button');
+  dlBtn.textContent = 'del';
+  dlBtn.classList.add('btn');
 
-  Btn.innerHTML = "削除";
-  li.appendChild(Btn);
+  dlBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    todoList.removeChild(li)
+  })
 }
-addBtn.addEventListener('click', function () {
-  const newTodo = todoInput.value.trim();
-  addTodoList()
-  todoInput.value = "";
-})
-Btn.addEventListener('click', function () {
-  // DOMから削除
-  li.remove();
-  // localstrageから削除
-
-})
-
-
-// li.addEventListener("click", function comp() {
-//   li.classList.toggle('completed');
-// })
